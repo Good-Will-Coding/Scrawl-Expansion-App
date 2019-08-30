@@ -1,5 +1,5 @@
-{
-  "scrawlCards": [
+
+   const data = [
     "Coat hanger abortions.",
     "Man meat.",
     "Autocannibalism.",
@@ -1555,4 +1555,6 @@
     "The Royal Canadian Mounted Police.",
     "An icy handjob from an Edmonton hooker."
   ]
-}
+
+
+export default data;
