@@ -1,5 +1,5 @@
 import React from "react";
-
+import Header from "../header/Header";
 export default props => {
   const { cardsChosen } = props.location.state;
 
@@ -16,6 +16,7 @@ export default props => {
   };
   return (
     <div>
+      <Header title="Round Over" />
       <div className="results-container">{renderResults()}</div>
     </div>
   );

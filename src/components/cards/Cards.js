@@ -68,14 +68,14 @@ const Cards = props => {
 
   return !allCardsChosen ? (
     <div className="game-container">
-      <Header playerNum={playerNum} />
+      <Header title="Player" playerNum={playerNum} />
       <div className="cards-container">
         <div>{renderPlayerChoices()}</div>
       </div>
     </div>
   ) : (
-      <Scrawl cardsChosen={totalPlayers} />
-    );
+    <Scrawl cardsChosen={totalPlayers} />
+  );
 };
 
 export default Cards;
