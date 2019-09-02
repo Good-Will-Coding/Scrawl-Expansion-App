@@ -27,11 +27,8 @@ const Cards = props => {
 
     for (let i = 0; i < 4; i++) {
       let arr = b[Math.floor(Math.random() * b.length)];
-
       let index = b.indexOf(arr);
-
       b.splice(index, 1);
-
       newArr.push(arr);
     }
 

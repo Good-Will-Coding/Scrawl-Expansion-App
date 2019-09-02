@@ -1,10 +1,19 @@
-import React from 'react'
+import React from "react";
 
-export default (props) => {
-    console.log(props.location.state)
+export default props => {
+  const { cardsChosen } = props.location.state;
+
+  const renderResults = () => {
+    // return Object.keys(cardsChosen).map((items, index) => {
+    //   return (
+         
+
+    //   );
+    // });
+  };
   return (
     <div>
-      End of round
+      <div className="results-container">{renderResults()}</div>
     </div>
-  )
-}
+  );
+};
