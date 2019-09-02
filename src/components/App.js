@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import MainMenu from './main_menu/MainMenu';
-import AmountOfPlayers from './players/AmountOfPlayers';
-import Cards from './cards/Cards';
+import MainMenu from "./main_menu/MainMenu";
+import AmountOfPlayers from "./players/AmountOfPlayers";
+import Cards from "./cards/Cards";
 
 function App() {
   return (
