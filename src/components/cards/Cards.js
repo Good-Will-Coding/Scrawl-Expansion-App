@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import cardData from "../../data/scrawl_data";
 import Header from "../header/Header";
 import Scrawl from "../scrawl/Scrawl";
+import AmountOfPlayers from "../players/AmountOfPlayers";
 
 const Cards = props => {
   const { amountOfPlayers } = props.location.state.players;
-  let totalPlayers = JSON.parse(localStorage.getItem('players_choice')) || {};
+  let totalPlayers = JSON.parse(localStorage.getItem("players_choice")) || {};
   const newArr = [];
   const [playerChoice, setPlayerChoice] = useState({});
   const [playerNum, setPlayerNum] = useState(1);
   const [allCardsChosen, setAllCardsChosen] = useState(false);
-
-
 
   const createPlayers = () => {
     if (playerNum < 1) {
@@ -43,18 +42,18 @@ const Cards = props => {
     setAllCardsChosen(!allCardsChosen);
   };
   const playerChoosesCard = card => {
-    console.log('player num', playerNum)
-    if (playerNum < amountOfPlayers) {
+    if (playerNum <= amountOfPlayers) {
       if (`totalPlayers.player${playerNum} === ""`) {
         totalPlayers[`player${playerNum}`] = `${card}`;
-        localStorage.setItem('players_choice', JSON.stringify(totalPlayers))
-
+        localStorage.setItem("players_choice", JSON.stringify(totalPlayers));
       }
-    } else {
+    }
+
+    if (playerNum >= amountOfPlayers) {
       allPlayersHaveChosen();
     }
-    setPlayerNum(playerNum + 1);
 
+    setPlayerNum(playerNum + 1);
   };
 
   const renderPlayerChoices = () => {
@@ -78,8 +77,8 @@ const Cards = props => {
       </div>
     </div>
   ) : (
-    <Scrawl cardsChosen={totalPlayers} />
-  );
+      <Scrawl cardsChosen={totalPlayers} />
+    );
 };
 
 export default Cards;
