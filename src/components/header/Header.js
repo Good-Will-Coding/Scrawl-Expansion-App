@@ -7,7 +7,7 @@ const Header = ({playerNum}) => {
       <div className="container">
           <header>
               <h1>Player {playerNum}</h1>
-              <h3><Link to="/players/">New Game</Link></h3>
+              <h3><Link to="/players/" onClick={() => localStorage.clear()}>New Game</Link></h3>
           </header>
       </div>
     </div>

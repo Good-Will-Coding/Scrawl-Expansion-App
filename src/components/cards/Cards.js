@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import cardData from "../../data/scrawl_data";
 import Header from "../header/Header";
-import Scrawl from '../scrawl/Scrawl';
+import Scrawl from "../scrawl/Scrawl";
 
 const Cards = props => {
   const { amountOfPlayers } = props.location.state.players;
-  let totalPlayers = {};
+  let totalPlayers = JSON.parse(localStorage.getItem('players_choice')) || {};
   const newArr = [];
   const [playerChoice, setPlayerChoice] = useState({});
   const [playerNum, setPlayerNum] = useState(1);
   const [allCardsChosen, setAllCardsChosen] = useState(false);
 
+
+
   const createPlayers = () => {
-    for (let i = 1; i <= amountOfPlayers; i++) {
-      if (!(`player${i}` in totalPlayers)) {
-        totalPlayers[`player${i}`] = "";
+    if (playerNum < 1) {
+      for (let i = 1; i <= amountOfPlayers; i++) {
+        if (!(`player${i}` in totalPlayers)) {
+          totalPlayers[`player${i}`] = "";
+        }
       }
     }
   };
-
 
   const pickRandomCards = () => {
     const b = cardData.slice();
@@ -38,19 +41,20 @@ const Cards = props => {
 
   const allPlayersHaveChosen = () => {
     setAllCardsChosen(!allCardsChosen);
-  }
+  };
   const playerChoosesCard = card => {
-    const totalPlayersLength = Object.keys(totalPlayers).length;
-    if(playerNum < totalPlayersLength) {
+    console.log('player num', playerNum)
+    if (playerNum < amountOfPlayers) {
       if (`totalPlayers.player${playerNum} === ""`) {
-        let choice = totalPlayers[`player${playerNum}`] = `${card}`;
-        setPlayerNum(playerNum + 1)
-        console.log(totalPlayers)
+        totalPlayers[`player${playerNum}`] = `${card}`;
+        localStorage.setItem('players_choice', JSON.stringify(totalPlayers))
+
       }
     } else {
       allPlayersHaveChosen();
     }
-    
+    setPlayerNum(playerNum + 1);
+
   };
 
   const renderPlayerChoices = () => {
@@ -58,10 +62,7 @@ const Cards = props => {
     return pickRandomCards().map((item, index) => {
       return (
         <div className="card" key={index}>
-          <div
-            className="card-item"
-            onClick={() => playerChoosesCard(item)}
-          >
+          <div className="card-item" onClick={() => playerChoosesCard(item)}>
             {item}
           </div>
         </div>
@@ -69,15 +70,15 @@ const Cards = props => {
     });
   };
 
-  return (
-    !allCardsChosen ?
+  return !allCardsChosen ? (
     <div className="game-container">
       <Header playerNum={playerNum} />
       <div className="cards-container">
         <div>{renderPlayerChoices()}</div>
       </div>
     </div>
-    : <Scrawl cardsChosen={playerChoice} />
+  ) : (
+    <Scrawl cardsChosen={totalPlayers} />
   );
 };
 
