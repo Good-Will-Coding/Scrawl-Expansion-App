@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import './../../styles/main_menu.css'
 
 
 const newGame = () => {
@@ -9,7 +10,7 @@ const newGame = () => {
           <h1>Scrawl Extension</h1>
       </div>
       <div className="new-game-section">
-       <Link to="/players/" onClick={() => localStorage.clear()}>New Game</Link>
+       <Link className="menu-a" to="/players/" onClick={() => localStorage.clear()}>New Game</Link>
       </div>
     </div>
   )

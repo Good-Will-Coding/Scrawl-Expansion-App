@@ -3,6 +3,7 @@ import cardData from "../../data/scrawl_data";
 import Header from "../header/Header";
 import Scrawl from "../scrawl/Scrawl";
 import AmountOfPlayers from "../players/AmountOfPlayers";
+import '../../styles/cards.css'
 
 const Cards = props => {
   const { amountOfPlayers } = props.location.state.players;

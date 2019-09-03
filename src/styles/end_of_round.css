@@ -1,0 +1,13 @@
+.results-container {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.result {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid rgb(23, 23, 24);
+    color: white;
+    background: rgb(65, 39, 112);
+    box-shadow: 1px 5px 5px rgba(68,68,68,0.6);
+
+}

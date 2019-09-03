@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "../../styles/amount_of_players.css";
 
 const AmountOfPlayers = () => {
   const [amountOfPlayers, setAmountOfPlayers] = useState("");
@@ -30,12 +31,18 @@ const AmountOfPlayers = () => {
           <input type="text" value={amountOfPlayers} onChange={handleChange} />
         </div>
         {playBtn ? (
-          <Link
-            to={{ pathname: "/cards", state: { players: { amountOfPlayers } } }}
-          >
-            PLAY
-          </Link>
-        ) : null }
+          <div className="players-link-container">
+            <Link
+              className="players_link menu-a"
+              to={{
+                pathname: "/cards",
+                state: { players: { amountOfPlayers } }
+              }}
+            >
+              Pick Your Cards!
+            </Link>
+          </div>
+        ) : null}
       </div>
     </div>
   );

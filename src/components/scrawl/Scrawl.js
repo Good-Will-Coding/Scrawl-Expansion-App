@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import '../../styles/scrawl.css'
 
 const Scrawl = ({ cardsChosen }) => {
     console.log(cardsChosen)
   return (
-    <div>
+    <div className="scrawl-menu">
       <h1>SCRAWL!</h1>
-        <Link to={{ pathname: "/endofround/", state: {cardsChosen}}}>End of Round</Link>
-        
+        <Link className="scrawl-link" to={{ pathname: "/endofround/", state: {cardsChosen}}}>End of Round</Link>
     </div>
   )
 }

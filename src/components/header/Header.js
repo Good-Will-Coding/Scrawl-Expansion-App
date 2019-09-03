@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const Header = ({ playerNum, title }) => {
   return (
-    <div>
       <div className="container">
         <header>
           <h1>
@@ -16,7 +15,6 @@ const Header = ({ playerNum, title }) => {
           </h3>
         </header>
       </div>
-    </div>
   );
 };
 
