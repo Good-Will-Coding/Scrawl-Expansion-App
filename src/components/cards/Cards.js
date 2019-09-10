@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import parse from 'html-react-parser';
 import cardData from "../../data/scrawl_data";
 import Header from "../header/Header";
 import Scrawl from "../scrawl/Scrawl";
 import AmountOfPlayers from "../players/AmountOfPlayers";
-import '../../styles/cards.css'
+import "../../styles/cards.css";
 
 const Cards = props => {
   const { amountOfPlayers } = props.location.state.players;
@@ -24,7 +25,9 @@ const Cards = props => {
   };
 
   const pickRandomCards = () => {
-    const b = cardData.slice();
+    const cards = JSON.parse(localStorage.getItem("cardsWithRemoved")) || cardData;
+
+    const b = cards.slice();
 
     for (let i = 0; i < 4; i++) {
       let arr = b[Math.floor(Math.random() * b.length)];
@@ -32,7 +35,7 @@ const Cards = props => {
       b.splice(index, 1);
       newArr.push(arr);
     }
-
+    localStorage.setItem("cardsWithRemoved", JSON.stringify(b));
     return newArr;
   };
 
@@ -60,7 +63,7 @@ const Cards = props => {
       return (
         <div className="card" key={index}>
           <div className="card-item" onClick={() => playerChoosesCard(item)}>
-            {item}
+            {parse(item)}
           </div>
         </div>
       );

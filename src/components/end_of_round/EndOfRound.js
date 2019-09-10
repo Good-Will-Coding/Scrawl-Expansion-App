@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import parse from "html-react-parser";
+
 import Header from "../header/Header";
-import '../../styles/end_of_round.css'
+import "../../styles/end_of_round.css";
 export default props => {
   const { cardsChosen } = props.location.state;
+  const [revealed, setRevealed] = useState(false);
 
   const renderResults = () => {
     return Object.keys(cardsChosen).map((key, value) => {
       const playerTitle = key.toUpperCase().replace(/([A-Z])(\d)/g, "$1 $2");
       return (
         <div key={value} className="result">
-          <h3>{`${playerTitle}: ${cardsChosen[key]}`}</h3>
+          <h3>
+            {`${playerTitle}:`}
+            <p className="card-description">{`${cardsChosen[key]}`}</p>
+          </h3>
         </div>
       );
     });

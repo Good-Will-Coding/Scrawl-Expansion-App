@@ -1,21 +1,20 @@
 .cards-container {
-    display: flex;
-    font-family: 'Roboto Condensed', sans-serif;
-    padding: 10px;
+  display: flex;
+  font-family: "Roboto Condensed", sans-serif;
+  justify-content: center;
 }
 
 .card {
- background: rgb(226, 226, 226);
- border: 3px solid rgb(206, 206, 206);
- margin: 10px;
- cursor: pointer;
- box-shadow: 5px 5px 5px rgba(146, 145, 145, 0.6);
-
+  text-align: center;
+  background: rgb(226, 226, 226);
+  border: 3px solid rgb(206, 206, 206);
+  margin: 10px;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px rgba(146, 145, 145, 0.6);
 }
 
 .card-item {
-    margin: 20px;
-    padding: 0px 5px;
-    font-size: 1.5rem;
-
+  margin: 20px;
+  padding: 0px 5px;
+  font-size: 1.5rem;
 }
