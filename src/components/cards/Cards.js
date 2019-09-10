@@ -8,11 +8,14 @@ import "../../styles/cards.css";
 
 const Cards = props => {
   const amountOfPlayers = props.location.state.players.amountOfPlayers || JSON.parse(localStorage.getItem("num_of_players"));
-  let totalPlayers = JSON.parse(localStorage.getItem("players_choice")) || {};
   const newArr = [];
+  
+  let totalPlayers = JSON.parse(localStorage.getItem("players_choice")) || {};
+  
   const [playerNum, setPlayerNum] = useState(1);
   const [allCardsChosen, setAllCardsChosen] = useState(false);
   const [round, setRound] = useState(1);
+  
 
   const createPlayers = () => {
     if (playerNum < 1) {
@@ -25,9 +28,7 @@ const Cards = props => {
   };
 
   const pickRandomCards = () => {
-    const cards =
-      JSON.parse(localStorage.getItem("cardsWithRemoved")) || cardData;
-
+    const cards = JSON.parse(localStorage.getItem("cardsWithRemoved")) || cardData;
     const b = cards.slice();
 
     for (let i = 0; i < 4; i++) {
@@ -43,6 +44,7 @@ const Cards = props => {
   const allPlayersHaveChosen = () => {
     setAllCardsChosen(!allCardsChosen);
   };
+  
   const playerChoosesCard = card => {
     if (playerNum <= amountOfPlayers) {
       if (`totalPlayers.player${playerNum} === ""`) {
