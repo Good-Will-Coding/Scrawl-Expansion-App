@@ -7,12 +7,12 @@ import AmountOfPlayers from "../players/AmountOfPlayers";
 import "../../styles/cards.css";
 
 const Cards = props => {
-  const amountOfPlayers = props.location.state.players.amountOfPlayers || JSON.parse(localStorage.getItem("num_of_players")) ;
+  const amountOfPlayers = props.location.state.players.amountOfPlayers || JSON.parse(localStorage.getItem("num_of_players"));
   let totalPlayers = JSON.parse(localStorage.getItem("players_choice")) || {};
   const newArr = [];
-  // const [playerChoice, setPlayerChoice] = useState({});
   const [playerNum, setPlayerNum] = useState(1);
   const [allCardsChosen, setAllCardsChosen] = useState(false);
+  const [round, setRound] = useState(1);
 
   const createPlayers = () => {
     if (playerNum < 1) {
@@ -36,7 +36,7 @@ const Cards = props => {
       b.splice(index, 1);
       newArr.push(arr);
     }
-    localStorage.setItem("cardsWithRemoved", JSON.stringify(b));
+      localStorage.setItem("cardsWithRemoved", JSON.stringify(b));
     return newArr;
   };
 
@@ -80,8 +80,8 @@ const Cards = props => {
       </div>
     </div>
   ) : (
-    <Scrawl cardsChosen={totalPlayers} />
-  );
+      <Scrawl cardsChosen={totalPlayers} />
+    );
 };
 
 export default Cards;
