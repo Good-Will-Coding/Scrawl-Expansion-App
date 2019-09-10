@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import parse from "html-react-parser";
 
+import Choice from '../choice/Choice';
 import Header from "../header/Header";
 import "../../styles/end_of_round.css";
 export default props => {
@@ -12,10 +13,11 @@ export default props => {
       const playerTitle = key.toUpperCase().replace(/([A-Z])(\d)/g, "$1 $2");
       return (
         <div key={value} className="result">
-          <h3>
+          <Choice player={playerTitle} description={cardsChosen[key]} />
+          {/* <h3>
             {`${playerTitle}:`}
             <p className="card-description">{`${cardsChosen[key]}`}</p>
-          </h3>
+          </h3> */}
         </div>
       );
     });

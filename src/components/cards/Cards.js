@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 import cardData from "../../data/scrawl_data";
 import Header from "../header/Header";
 import Scrawl from "../scrawl/Scrawl";
@@ -25,7 +25,8 @@ const Cards = props => {
   };
 
   const pickRandomCards = () => {
-    const cards = JSON.parse(localStorage.getItem("cardsWithRemoved")) || cardData;
+    const cards =
+      JSON.parse(localStorage.getItem("cardsWithRemoved")) || cardData;
 
     const b = cards.slice();
 
