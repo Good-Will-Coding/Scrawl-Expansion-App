@@ -10,7 +10,7 @@ const Cards = props => {
   const amountOfPlayers = props.location.state.players.amountOfPlayers || JSON.parse(localStorage.getItem("num_of_players")) ;
   let totalPlayers = JSON.parse(localStorage.getItem("players_choice")) || {};
   const newArr = [];
-  const [playerChoice, setPlayerChoice] = useState({});
+  // const [playerChoice, setPlayerChoice] = useState({});
   const [playerNum, setPlayerNum] = useState(1);
   const [allCardsChosen, setAllCardsChosen] = useState(false);
 

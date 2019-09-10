@@ -1,17 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import '../../styles/header.css'
 
 const Header = ({ playerNum, title, newRound }) => {
   const amountOfPlayers2 = JSON.parse(localStorage.getItem("players_choice"));
  
- if(!amountOfPlayers2 == null) {
-  console.log(Object.keys(amountOfPlayers2).length)
-
- }
   return (
       <div className="container">
         <header>
-          <h1>
+          <h1 className="header-menu">
             {title} {playerNum}
           </h1>
           <h3>

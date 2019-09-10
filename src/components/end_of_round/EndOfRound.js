@@ -19,7 +19,6 @@ export default props => {
   return (
     <div>
       <Header title="Round Over" newRound="New Round" />
-      
       <div className="results-container">{renderResults()}</div>
     </div>
   );

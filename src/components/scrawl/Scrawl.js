@@ -7,7 +7,7 @@ const Scrawl = ({ cardsChosen }) => {
   return (
     <div className="scrawl-menu">
       <h1>SCRAWL!</h1>
-        <Link className="scrawl-link" to={{ pathname: "/endofround/", state: {cardsChosen}}}>End of Round</Link>
+        <Link className="scrawl-link" to={{ pathname: "/endofround/", state: {cardsChosen}}}>Show Cards</Link>
     </div>
   )
 }

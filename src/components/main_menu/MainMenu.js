@@ -7,7 +7,7 @@ const newGame = () => {
   return (
     <div>
       <div className="game-title">
-          <h1>Scrawl Extension</h1>
+          <h1>Scrawl Expansion Pack</h1>
       </div>
       <div className="new-game-section">
        <Link className="menu-a" to="/players/" onClick={() => localStorage.clear()}>New Game</Link>
