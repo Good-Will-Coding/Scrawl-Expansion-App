@@ -7,7 +7,7 @@ import AmountOfPlayers from "../players/AmountOfPlayers";
 import "../../styles/cards.css";
 
 const Cards = props => {
-  const { amountOfPlayers } = props.location.state.players;
+  const amountOfPlayers = props.location.state.players.amountOfPlayers || JSON.parse(localStorage.getItem("num_of_players")) ;
   let totalPlayers = JSON.parse(localStorage.getItem("players_choice")) || {};
   const newArr = [];
   const [playerChoice, setPlayerChoice] = useState({});
@@ -60,6 +60,7 @@ const Cards = props => {
 
   const renderPlayerChoices = () => {
     createPlayers();
+    localStorage.setItem("num_of_players", JSON.stringify(amountOfPlayers));
     return pickRandomCards().map((item, index) => {
       return (
         <div className="card" key={index}>

@@ -15,4 +15,15 @@
 .card-description {
     color: white;
     text-align: center;
+    font-size: 1.5rem;
+}
+
+
+.card-choice {
+    cursor: pointer;
+
+}
+
+.card-choice::hover {
+    opacity: 0.5;
 }
