@@ -1,39 +1,40 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import parse from "html-react-parser";
 import cardData from "../../data/scrawl_data";
 import Header from "../header/Header";
 import Scrawl from "../scrawl/Scrawl";
 import AmountOfPlayers from "../players/AmountOfPlayers";
 import "../../styles/cards.css";
-// import { RoundContext, ScoreContext } from '../store';
+import { RoundContext, ScoreContext } from "../store";
 
 const Cards = props => {
-  const amountOfPlayers = props.location.state.players.amountOfPlayers || JSON.parse(localStorage.getItem("num_of_players"));
+  const amountOfPlayers =
+    props.location.state.players.amountOfPlayers ||
+    JSON.parse(localStorage.getItem("num_of_players"));
   const newArr = [];
-  
+
   let totalPlayers = JSON.parse(localStorage.getItem("players_choice")) || {};
-  
+
   const [playerNum, setPlayerNum] = useState(1);
   const [allCardsChosen, setAllCardsChosen] = useState(false);
-<<<<<<< Updated upstream
-  const [round, setRound] = useState(1);
+  const [score, setScore] = useContext(ScoreContext);
+
   
-=======
-
->>>>>>> Stashed changes
-
   const createPlayers = () => {
     if (playerNum < 1) {
       for (let i = 1; i <= amountOfPlayers; i++) {
         if (!(`player${i}` in totalPlayers)) {
           totalPlayers[`player${i}`] = "";
+          
         }
       }
     }
   };
 
+
   const pickRandomCards = () => {
-    const cards = JSON.parse(localStorage.getItem("cardsWithRemoved")) || cardData;
+    const cards =
+      JSON.parse(localStorage.getItem("cardsWithRemoved")) || cardData;
     const b = cards.slice();
 
     for (let i = 0; i < 4; i++) {
@@ -42,14 +43,14 @@ const Cards = props => {
       b.splice(index, 1);
       newArr.push(arr);
     }
-      localStorage.setItem("cardsWithRemoved", JSON.stringify(b));
+    localStorage.setItem("cardsWithRemoved", JSON.stringify(b));
     return newArr;
   };
 
   const allPlayersHaveChosen = () => {
     setAllCardsChosen(!allCardsChosen);
   };
-  
+
   const playerChoosesCard = card => {
     if (playerNum <= amountOfPlayers) {
       if (`totalPlayers.player${playerNum} === ""`) {
@@ -87,8 +88,8 @@ const Cards = props => {
       </div>
     </div>
   ) : (
-      <Scrawl cardsChosen={totalPlayers} />
-    );
+    <Scrawl cardsChosen={totalPlayers} />
+  );
 };
 
 export default Cards;

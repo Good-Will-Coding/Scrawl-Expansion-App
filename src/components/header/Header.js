@@ -26,18 +26,6 @@ const Header = ({ playerNum, title, newRound }) => {
             </p>
           ) : null}
         </h3>
-        
-        <h2>
-          <Link
-            onClick={() => setRound(prevStat => prevStat + 1)}
-            to={{
-              pathname: "/cards",
-              state: { players: { amountOfPlayers2 } }
-            }}
-          >
-            {newRound}
-          </Link>
-        </h2>
       </header>
     </div>
   );

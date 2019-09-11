@@ -1,0 +1,22 @@
+.score-board {
+    background: rgb(85, 75, 75);
+    text-align: center;
+    margin: 5px auto;
+    font-family: 'Luckiest Guy', cursive;
+    padding: 5px;
+    box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+
+}
+
+.scores {
+    color: rgb(246, 212, 61);
+    text-shadow: 2px 2px #11100e;
+
+    
+    
+}
+
+.scores p {
+    color: white;
+    font-size: 2rem;
+}

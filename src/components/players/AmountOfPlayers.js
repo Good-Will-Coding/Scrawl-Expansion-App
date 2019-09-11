@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/amount_of_players.css";
+import { ScoreContext } from "../store";
 
 const AmountOfPlayers = () => {
   const [amountOfPlayers, setAmountOfPlayers] = useState("");
   const [playBtn, setPlayBtn] = useState(false);
   const [error, setError] = useState(false);
+  const [scoreBoard, setScoreBoard] = useContext(ScoreContext);
 
   const resetPlayerAmountsAndBtn = () => {
     setAmountOfPlayers("");
     setPlayBtn(false);
   };
+
   const handleChange = e => {
     resetPlayerAmountsAndBtn();
     setAmountOfPlayers(e.target.value);
@@ -19,8 +22,20 @@ const AmountOfPlayers = () => {
       console.log("Error");
       setError(!error);
     } else {
+      setPlayersScoreBoard(e.target.value);
       setPlayBtn(!playBtn);
       setError(false);
+    }
+  };
+
+  const setPlayersScoreBoard = players => {
+    for (let i = 1; i <= players; i++) {
+      if (!(`player${i}` in scoreBoard)) {
+        setScoreBoard(prevState => ({
+          ...prevState,
+          ...(prevState[`player${i}`] = 0)
+        }));
+      }
     }
   };
 

@@ -1,29 +1,38 @@
 .results-container {
-    font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 .result {
-    margin: 10px;
-    padding: 25px;
-    border: 1px solid rgb(57, 57, 104);
-    color: rgb(255, 230, 3);
-    background: rgb(65, 39, 112);
-    box-shadow: 1px 5px 5px rgba(68,68,68,0.6);
-    text-align: center;
+  margin: 10px;
+  padding: 25px;
+  border: 1px solid rgb(57, 57, 104);
+  color: rgb(255, 230, 3);
+  background: rgb(65, 39, 112);
+  box-shadow: 1px 5px 5px rgba(68, 68, 68, 0.6);
+  text-align: center;
 }
 
 .card-description {
-    color: white;
-    text-align: center;
-    font-size: 1.5rem;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
-
 .card-choice {
-    cursor: pointer;
-
+  cursor: pointer;
 }
 
 .card-choice::hover {
-    opacity: 0.5;
+  opacity: 0.5;
+}
+
+.icon {
+  margin: auto;
+  color: rgb(248, 248, 248);
+  width: auto;
+  box-shadow: 1px 1px 5px rgb(44, 43, 38);
+  background: rgb(16, 180, 98);
+  padding: 5px;
+  font-size: 2rem;
+  cursor: pointer;
 }

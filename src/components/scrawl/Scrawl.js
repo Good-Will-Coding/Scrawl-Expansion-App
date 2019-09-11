@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../../styles/scrawl.css'
 
 const Scrawl = ({ cardsChosen }) => {
-    console.log(cardsChosen)
+    // console.log(cardsChosen)
   return (
     <div className="scrawl-menu">
       <h1>SCRAWL!</h1>
