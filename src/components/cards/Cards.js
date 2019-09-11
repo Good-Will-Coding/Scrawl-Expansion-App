@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import parse from "html-react-parser";
 import cardData from "../../data/scrawl_data";
 import Header from "../header/Header";
 import Scrawl from "../scrawl/Scrawl";
 import AmountOfPlayers from "../players/AmountOfPlayers";
 import "../../styles/cards.css";
+// import { RoundContext, ScoreContext } from '../store';
 
 const Cards = props => {
   const amountOfPlayers = props.location.state.players.amountOfPlayers || JSON.parse(localStorage.getItem("num_of_players"));
@@ -14,8 +15,12 @@ const Cards = props => {
   
   const [playerNum, setPlayerNum] = useState(1);
   const [allCardsChosen, setAllCardsChosen] = useState(false);
+<<<<<<< Updated upstream
   const [round, setRound] = useState(1);
   
+=======
+
+>>>>>>> Stashed changes
 
   const createPlayers = () => {
     if (playerNum < 1) {

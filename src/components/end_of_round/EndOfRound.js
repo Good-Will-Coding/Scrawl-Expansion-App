@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Choice from "../choice/Choice";
 import Header from "../header/Header";
 import "../../styles/end_of_round.css";
 
 export default props => {
   const { cardsChosen } = props.location.state;
+  // const [round, setRound] = useContext(RoundContext);
+  
 
   const renderResults = () => {
     return Object.keys(cardsChosen).map((key, value) => {

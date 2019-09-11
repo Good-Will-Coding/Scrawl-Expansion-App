@@ -28,7 +28,7 @@ const AmountOfPlayers = () => {
     <div>
       <div className="container">
         <div className="main-section">
-          <h1>Please enter an amount of players.</h1>
+          <h1>Please enter the amount of players for this game.</h1>
           <h5>Welcome! Scrawl recommends 4 to 8 players.</h5>
         </div>
         <div className="input-section">

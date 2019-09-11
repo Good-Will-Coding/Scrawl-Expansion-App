@@ -7,9 +7,14 @@
 
 }
 
+.main-section {
+    color: rgb(59, 58, 58);
+    font-size: 1rem;
+}
+
 input[type=text] {
     color: rgb(56, 0, 102);
-    background: rgb(243, 243, 243);
+    background: rgb(238, 238, 238);
     border: 0;
     font-size: 1.2rem;
     text-align: center;
@@ -17,8 +22,8 @@ input[type=text] {
 }
 
 .players-link-container {
-    
-    margin-top: 4rem;
+    width: auto;
+    margin: 1rem 3rem 0rem 3rem;
     color: white;
     font-size: 2rem;
     background: rgb(71, 13, 119);
