@@ -31,7 +31,6 @@ const Cards = props => {
     }
   };
 
-
   const pickRandomCards = () => {
     const cards =
       JSON.parse(localStorage.getItem("cardsWithRemoved")) || cardData;

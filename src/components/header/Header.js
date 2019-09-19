@@ -25,7 +25,7 @@ const Header = ({ playerNum, title, newRound }) => {
           <Link to="/players/" onClick={resetGame}>
             New Game
           </Link>
-          {round > 0 ? (
+          {score ? (
             <p>
               <Link to={{
               pathname: "/scores",

@@ -9,14 +9,14 @@ const Scores = props => {
 
   const renderScoreBoard = () => {
     console.log(score)
-    if(scoreBoard) {
-      return Object.keys(scoreBoard).map((key, value) => {
+    if(score) {
+      return Object.keys(score).map((key) => {
         const playerTitle = key.toUpperCase().replace(/([A-Z])(\d)/g, "$1 $2");
         return (
           <div key={key} className="score-board">
             <div className="scores">
               <h1>{playerTitle}</h1>
-              <p>{value}</p>
+              <p>{score[key]}</p>
             </div>
           </div>
         );
